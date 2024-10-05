@@ -33,13 +33,9 @@ picture img {
 
 /* Hero */
 
-.hero {
-  margin-bottom: 3svw;
-}
-
 .hero-content {
   background-color: transparent;
-  padding: 3rem;
+  padding: max(3rem, 3svw);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -125,5 +121,61 @@ picture img {
 }
 
 /* Projects */
+
+.project-list {
+  margin: 0 auto;
+  padding: 3rem;
+  max-width: 250rem;
+}
+
+.project-list-header {
+  font-size: max(1.5rem, 3svw);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.project-container {
+  --proj-img-width: max(275px, 25svw);
+  --project-header-font-size: max(1.25rem, 2svw);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, var(--proj-img-width));
+  place-content: space-between;
+  gap: 1rem;
+}
+
+.project {
+  margin-bottom: 2.5rem;
+}
+
+.project-img {
+  width: var(--proj-img-width);
+}
+
+.project-info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem;
+  padding: 1.5rem;
+  padding-top: 0.8rem;
+}
+
+.project-name {
+  font-size: var(--project-header-font-size);
+}
+
+.project-links {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.project-links img {
+  height: var(--project-header-font-size);
+  padding: 0 0.5svw;
+}
+
+.project-description {
+  grid-column: span 2;
+}
 
 /* Contacts */
