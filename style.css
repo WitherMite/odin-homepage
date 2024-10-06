@@ -6,6 +6,7 @@
   --accent-font-color: rgb(255, 255, 255);
   --font-color-bold: rgb(0, 0, 0);
   --font-color: rgb(75, 75, 75);
+  --window-padding: max(3rem, 3svw);
 }
 
 * {
@@ -35,7 +36,7 @@ picture img {
 
 .hero-content {
   background-color: transparent;
-  padding: max(3rem, 3svw);
+  padding: var(--window-padding);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -66,7 +67,8 @@ picture img {
 }
 
 .hero-portrait {
-  width: clamp(275px, 33svw, 80svh);
+  width: max(275px, 33svw);
+  max-width: calc(100svw - calc(var(--window-padding) * 2));
   object-fit: cover;
 }
 
@@ -95,7 +97,7 @@ picture img {
 
 .about-header {
   flex: 1;
-  font-size: max(1.5rem, 3svw);
+  font-size: max(1.75rem, 3svw);
   font-weight: 500;
   display: flex;
   align-items: flex-end;
@@ -123,28 +125,26 @@ picture img {
 /* Projects */
 
 .project-list {
+  --proj-img-width: clamp(275px, 25svw, 750px);
+  --project-header-font-size: clamp(1.25rem, 2svw, 3.75rem);
   margin: 0 auto;
-  padding: 3rem;
-  max-width: 250rem;
+  padding: 0 var(--window-padding);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, var(--proj-img-width));
+  place-content: center;
+  gap: 2rem;
 }
 
 .project-list-header {
-  font-size: max(1.5rem, 3svw);
+  font-size: max(1.75rem, 3svw);
   font-weight: 500;
-  margin-bottom: 0.75rem;
-}
-
-.project-container {
-  --proj-img-width: max(275px, 25svw);
-  --project-header-font-size: max(1.25rem, 2svw);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, var(--proj-img-width));
-  place-content: space-between;
-  gap: 1rem;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  margin-bottom: calc(var(--project-header-font-size) * -0.75);
 }
 
 .project {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .project-img {
@@ -152,11 +152,14 @@ picture img {
 }
 
 .project-info {
+  --small-padding: calc(var(--project-header-font-size) / 2.25);
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0.8rem;
-  padding: 1.5rem;
-  padding-top: 0.8rem;
+  gap: var(--small-padding);
+  padding: var(--project-header-font-size);
+  padding-top: var(--small-padding);
+  max-height: 18svh;
+  overflow: auto;
 }
 
 .project-name {
@@ -176,6 +179,7 @@ picture img {
 
 .project-description {
   grid-column: span 2;
+  font-size: calc(var(--project-header-font-size) / 1.75);
 }
 
 /* Contacts */
