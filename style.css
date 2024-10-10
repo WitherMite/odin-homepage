@@ -61,7 +61,8 @@ picture img {
 }
 
 .hero::before,
-.hero-content > *,
+.hero-portrait,
+.about,
 .project {
   box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.46);
 }
@@ -362,7 +363,6 @@ picture img {
     float: left;
     margin-right: 1.25rem;
     margin-bottom: 0.5rem;
-    box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.46);
   }
 
   .name {
