@@ -209,7 +209,7 @@ picture img {
 }
 
 .contact-info-img {
-  width: calc(max(200px, 33svw) * 1.33);
+  width: 40svw;
   max-width: calc(100svw - calc(var(--window-padding) * 2));
 }
 
